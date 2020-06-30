@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cacti 日95值查询系统</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="layui/css/layui.css" media="all"/>
+  <link rel="stylesheet" href="soulTable.css" media="all"/>
+  <script type="text/javascript" src="layui/layui.js"></script>
+</head>
+<body>
+
+<blockquote class="layui-elem-quote">
+<center>
+	<p><strong>注意：Cacti 日95值查询系统，每列数据均支持筛选功能，点击列头<i class="soul-icon soul-icon-filter"></i>图标进行筛选。点击右侧<i class="layui-icon layui-icon-export"></i>图标导出数据。点击右侧<i class="layui-icon layui-icon-print"></i>图标进行打印。</p>
+</center>
+</blockquote>
+
+<!--
+
+<div class="layui-row layui-form">
+    <div class="layui-col-sm5">
+        <div class="layui-inline">
+            <label class="layui-form-label">图形名称</label>
+            <div class="layui-input-inline" >
+                <input type="text" name="IMG_NAME"
+                       class="layui-input" placeholder="请输入图形名称">
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm5">
+        <div class="layui-inline">
+            <label class="layui-form-label">图形ID</label>
+            <div class="layui-input-inline">
+                <input type="text" name="IMG_ID"
+                       class="layui-input" placeholder="请输入图形ID">
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm2">
+        <button class="layui-btn mgl-20" lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i>查询</button>
+    </div>
+</div>
+
+-->
+
+<table id="myTable" lay-filter="myTable"></table>
+<script>
+  // 自定义模块
+  layui.config({
+    base: 'ext/',   // 模块目录
+    version: 'v1.5.14'
+  }).extend({             // 模块别名
+    soulTable: 'soulTable'
+  });
+
+
+  layui.use(['form', 'table','soulTable'], function () {
+    var table = layui.table,
+        soulTable = layui.soulTable,
+        $ = layui.$;
+
+    table.render({
+        elem: '#myTable'
+        ,limit: 20
+        ,page: true
+        ,toolbar: '<div><a class="layui-btn layui-btn-sm" lay-event="refresh"><i class="layui-icon layui-icon-refresh"></i>重载</a><a class="layui-btn layui-btn-normal layui-btn-sm" lay-event="clearFilter"><i class="layui-icon layui-icon-delete">清除所有筛选条件</a></div>'
+        ,cols: [[
+        ,{field:'DATE', title: '日期', width: 200,sort: true, filter: {type: 'date[yyyy-MM-dd HH:mm:ss]'}}
+        ,{field:'IMG_NAME', title: '图形名称' ,  filter: true}
+        ,{field:'IMG_ID', title: '图形ID',  width: 160,sort: true , filter: true}
+        ,{field:'95_VALUE', title: '每日95值',  width: 240,sort: true , filter: true, align: 'right'}
+      ]]
+	,filter: {
+           bottom: false 
+        }
+	,done: function () {
+            soulTable.render(this)
+        }
+    });
+
+    search({});
+    function search(data) {
+        var loading = layer.load(2);
+        $.ajax({
+            url: 'data.php',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                // myTable.reload({
+                //     data: res.data
+                // })
+                table.reload('myTable', {
+                    data: res.data
+                })
+            },
+            complete: function () {
+                layer.close(loading)
+            }
+        })
+    }
+
+    table.on('toolbar(myTable)', function(obj){
+        if (obj.event === 'refresh') {
+            // 清除所有筛选条件并重载表格
+            // 参数: tableId
+            search()
+        } else if (obj.event === 'clearFilter') {
+           // 清除所有筛选条件并重载表格
+           // 参数: tableId
+           soulTable.clearFilter('myTable')
+        }
+    });
+})
+</script>
+               <!-- 底部 -->
+                <div class="layui-footer footer">
+                        <p><center><span>copyright @2020 Fenei</span></center></p>
+                </div>
+</body>
+</html>

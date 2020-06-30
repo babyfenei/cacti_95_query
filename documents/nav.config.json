@@ -1,0 +1,208 @@
+{
+  "zh-CN": [
+    {
+      "name": "基础说明",
+      "children": [
+        {
+          "path": "/changelog",
+          "name": "更新日志"
+        },
+        {
+          "path": "/start/install",
+          "name": "安装"
+        },
+        {
+          "path": "/start/config",
+          "name": "全局配置"
+        }
+      ]
+    },
+    {
+      "name": "基本功能",
+      "children": [
+        {
+          "path": "/basic/drag",
+          "name": "拖拽列"
+        },
+        {
+          "path": "/basic/row-drag",
+          "name": "拖拽行"
+        },
+        {
+          "path": "/basic/auto-width",
+          "name": "自适应列宽"
+        },
+        {
+          "path": "/basic/cache",
+          "name": "记忆功能"
+        },
+        {
+          "path": "/basic/sort",
+          "name": "排序监听"
+        },
+        {
+          "path": "/basic/contextmenu",
+          "name": "右键菜单"
+        },
+        {
+          "path": "/basic/fixResize",
+          "name": "右侧固定列拖动列宽"
+        },
+        {
+          "path": "/basic/fixedScroll",
+          "name": "左右固定列支持滚动滚动"
+        },
+        {
+          "path": "/basic/overflow",
+          "name": "内容超出设置"
+        }
+      ]
+    },
+    {
+      "name": "筛选",
+      "children": [
+        {
+          "path": "/filter/basic",
+          "name": "基本筛选"
+        },
+        {
+          "path": "/filter/page",
+          "name": "分页"
+        },
+        {
+          "path": "/filter/reload",
+          "name": "表格重载"
+        },
+        {
+          "path": "/filter/menu",
+          "name": "下拉菜单/底栏定制"
+        },
+        {
+          "path": "/filter/header",
+          "name": "复杂表头筛选"
+        },{
+          "path": "/filter/checkbox",
+          "name": "复选框优化"
+        }
+      ]
+    },
+    {
+      "name": "excel导出",
+      "children": [
+        {
+          "path": "/excel/basic",
+          "name": "基本效果"
+        },
+        {
+          "path": "/excel/global-style",
+          "name": "全局参数设置"
+        },
+        {
+          "path": "/excel/style",
+          "name": "精确参数设置"
+        },
+        {
+          "path": "/excel/border",
+          "name": "边框样式设置"
+        },
+        {
+          "path": "/excel/func",
+          "name": "调用方法导出"
+        },
+        {
+          "path": "/excel/columns",
+          "name": "指定列导出"
+        },
+        {
+          "path": "/excel/header",
+          "name": "复杂表头导出"
+        },
+        {
+          "path": "/excel/add",
+          "name": "添加自定义内容"
+        },
+        {
+          "path": "/excel/form",
+          "name": "包含表单元素的导出"
+        },
+        {
+          "path": "/excel/total-row",
+          "name": "合计行导出"
+        }
+      ]
+    },
+    {
+      "name": "子表",
+      "children": [
+        {
+          "path": "/child/basic",
+          "name": "基础子表"
+        },
+        {
+          "path": "/child/show",
+          "name": "展开方式"
+        },
+        {
+          "path": "/child/request",
+          "name": "子表数据来源"
+        },
+        {
+          "path": "/child/is-child",
+          "name": "是否显示入口"
+        },
+        {
+          "path": "/child/title",
+          "name": "title设置"
+        },
+        {
+          "path": "/child/deep",
+          "name": "无限层级"
+        },
+        {
+          "path": "/child/event",
+          "name": "事件监听"
+        },
+        {
+          "path": "/child/header",
+          "name": "多入口/复杂表头"
+        },
+        {
+          "path": "/child/lazy",
+          "name": "懒加载"
+        },
+        {
+          "path": "/child/alone",
+          "name": "独立使用"
+        }
+      ]
+    },
+    {
+      "name": "单元格合并",
+      "children": [
+        {
+          "path": "/merge/basic",
+          "name": "列自动合并"
+        },
+        {
+          "path": "/merge/header",
+          "name": "复杂表头"
+        },
+        {
+          "path": "/merge/alone",
+          "name": "独立使用"
+        }
+      ]
+    }
+  ],
+  "en-US": [
+    {
+      "name": "Development",
+      "children": [
+        {
+          "path": "/changelog",
+          "name": "changelog"
+        }
+      ]
+    }
+  ]
+}
